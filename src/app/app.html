@@ -1,22 +1,3 @@
 <h1>{{ title() }}</h1>
 
-<h2> {{ recipe().name }} </h2>
-<img [src]="recipe().imgUrl" [alt]="recipe().name"/>
-
-<p> {{ recipe().description }} </p>
-
-<p> Servings: {{ count()[recipePosition()] }} </p>
-
-<h3> Ingredients: </h3>
-<ul>
-  @for(ingredient of adjustedIngredients(); track ingredient.name) {
-    <li> {{ ingredient.name }}: {{ ingredient.quantity }} {{ ingredient.unit }} </li>
-  }
-</ul>
-
-<button (click)="recipe1()">Recipe 1</button>
-<button (click)="recipe2()">Recipe 2</button>
-<button (click)="incrementCount()">Increase Servings</button>
-<button (click)="decrementCount()">Decrease Servings</button>
-
 <router-outlet />

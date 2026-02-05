@@ -1,0 +1,73 @@
+/* Container for search and add button */
+.recipe-list-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+form {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* input[name='search'] {
+  padding: 0.5rem;
+  border: 1px solid #bfc7d1;
+  border-radius: 4px;
+  font-size: 1rem;
+  background: #fff;
+  transition: border 0.2s;
+}
+input[name='search']:focus {
+  border-color: #1976d2;
+  outline: none;
+}
+
+button[type='submit'],
+.add-recipe-link button {
+  background: #1976d2;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.1rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+button[type='submit']:hover,
+.add-recipe-link button:hover {
+  background: #1565c0;
+} */
+
+.add-recipe-link {
+  text-decoration: none;
+  margin-left: 1rem;
+}
+
+/* .error {
+  color: #d32f2f;
+  font-size: 0.97rem;
+  margin-top: 0.2rem;
+} */
+
+/* Recipe links */
+.recipe-link {
+  display: block;
+  background: #f5f7fa;
+  color: #1976d2;
+  text-decoration: none;
+  padding: 1rem 1.2rem;
+  margin-bottom: 0.7rem;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+.recipe-link:hover {
+  background: #e3eaf6;
+  color: #0d47a1;
+}

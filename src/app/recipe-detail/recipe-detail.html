@@ -1,0 +1,21 @@
+<h2>
+  @if (recipe()?.isFavorite) {
+    <span>★ </span>
+  }
+  {{ recipe()?.name }}
+</h2>
+<img [src]="recipe()?.imgUrl" [alt]="recipe()?.name" />
+
+<p>{{ recipe()?.description }}</p>
+
+<p>Servings: {{ count() }}</p>
+
+<h3>Ingredients:</h3>
+<ul>
+  @for (ingredient of adjustedIngredients(); track ingredient.name) {
+    <li>{{ ingredient.name }}: {{ ingredient.quantity }} {{ ingredient.unit }}</li>
+  }
+</ul>
+
+<button (click)="incrementCount()">Increase Servings</button>
+<button (click)="decrementCount()">Decrease Servings</button>

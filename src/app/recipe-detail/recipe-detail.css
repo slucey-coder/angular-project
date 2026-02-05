@@ -1,0 +1,29 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+p,
+ul {
+  margin-bottom: 1rem;
+}
+
+button {
+  margin: 0.25rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+}

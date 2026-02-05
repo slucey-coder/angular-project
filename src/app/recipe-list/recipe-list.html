@@ -1,0 +1,25 @@
+<div class="recipe-list-header">
+  <form (submit)="$event.preventDefault(); searchInput.control.markAsTouched()">
+    <input
+      required
+      name="search"
+      [ngModel]="searchTerm()"
+      (ngModelChange)="searchTerm.set($event)"
+      placeholder="Search recipes..."
+      #searchInput="ngModel"
+    />
+    <button type="submit">Search</button>
+    @if (searchInput.invalid && searchInput.touched) {
+      <div class="error">Search is required.</div>
+    }
+  </form>
+  <a [routerLink]="['/add-recipe']" class="add-recipe-link">
+    <button type="button">Add Recipe</button>
+  </a>
+</div>
+
+@for (recipe of filteredRecipes(); track recipe.id) {
+  <a [routerLink]="['/recipe', recipe.id]" class="recipe-link">
+    {{ recipe.name }}
+  </a>
+}
