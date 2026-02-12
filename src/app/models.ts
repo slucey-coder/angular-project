@@ -8,6 +8,7 @@ export interface RecipeModel {
   id: number;
   name: string;
   description: string;
+  authorEmail: string;
   ingredients: Ingredient[];
   imgUrl: string;
   isFavorite: boolean;

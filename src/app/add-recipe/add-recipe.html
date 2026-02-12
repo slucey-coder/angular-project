@@ -1,18 +1,26 @@
-<form #recipeForm="ngForm" (ngSubmit)="onSubmit(recipeForm)">
+<form [formGroup]="recipeForm" (ngSubmit)="save()">
   <label class="FieldRow">
     Name:
-    <input name="name" ngModel required />
+    <input formControlName="name" required />
   </label>
-  @if (recipeForm.submitted && recipeForm.controls['name']?.invalid) {
+  @if (recipeForm.get('name')?.invalid && recipeForm.get('name')?.touched) {
     <div class="error">Name is required.</div>
   }
 
   <label class="FieldRow">
     Description:
-    <input name="description" ngModel required />
+    <input formControlName="description" required />
   </label>
-  @if (recipeForm.submitted && recipeForm.controls['description']?.invalid) {
+  @if (recipeForm.get('description')?.invalid && recipeForm.get('description')?.touched) {
     <div class="error">Description is required.</div>
+  }
+
+  <label class="FieldRow">
+    Author Email:
+    <input formControlName="authorEmail" required />
+  </label>
+  @if (recipeForm.get('authorEmail')?.invalid && recipeForm.get('authorEmail')?.touched) {
+    <div class="error">Author email is required.</div>
   }
 
   <!-- You can add more fields for ingredients, etc. -->
@@ -24,43 +32,39 @@
         <input
           name="ingredientName{{ i }}"
           [(ngModel)]="ingredients[i].name"
+          [ngModelOptions]="{ standalone: true }"
           placeholder="Name"
           required
         />
-        @if (recipeForm.submitted && !ingredients[i].name) {
-          <div class="error">Ingredient name is required.</div>
-        }
       </div>
       <div class="ingredient-field">
         <input
           name="ingredientQuantity{{ i }}"
           [(ngModel)]="ingredients[i].quantity"
+          [ngModelOptions]="{ standalone: true }"
           placeholder="Quantity"
           required
         />
-        @if (recipeForm.submitted && !ingredients[i].quantity) {
-          <div class="error">Quantity is required.</div>
-        }
       </div>
       <div class="ingredient-field">
         <input
           name="ingredientUnit{{ i }}"
           [(ngModel)]="ingredients[i].unit"
+          [ngModelOptions]="{ standalone: true }"
           placeholder="Unit"
           required
         />
-        @if (recipeForm.submitted && !ingredients[i].unit) {
-          <div class="error">Unit is required.</div>
-        }
       </div>
     }
-    <button type="button" (click)="addIngredient()">Add Ingredient</button>
-
-    <button type="submit">Add Recipe</button>
-    <p>
-      @if (success()) {
-        Recipe added successfully!
-      }
-    </p>
+    <button type="button" mat-raised-button color="primary" (click)="addIngredient()">
+      Add Ingredient
+    </button>
   </label>
+
+  <button type="submit" mat-raised-button color="primary" [disabled]="recipeForm.invalid">
+    Add Recipe
+  </button>
+  @if (success()) {
+    Recipe added successfully!
+  }
 </form>

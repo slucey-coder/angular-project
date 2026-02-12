@@ -21,20 +21,70 @@ body {
   box-sizing: inherit;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1 {
+  font-family: 'Pirata One', 'IM Fell English SC', serif;
+  font-weight: 700;
+  color: #bfa13a;
+  margin-top: 0;
+  letter-spacing: 0.06em;
+  font-size: 2.5em;
+  text-shadow:
+    3px 3px 0 #3a2c13,
+    0 3px 12px #e0c68a;
+}
+
+h2 {
+  font-family: 'Pirata One', 'IM Fell English SC', serif;
+  font-weight: 700;
+  color: #bfa13a;
+  margin-top: 0;
+  letter-spacing: 0.05em;
+  font-size: 2em;
+  text-shadow:
+    2px 2px 0 #3a2c13,
+    0 2px 8px #e0c68a;
+}
+
+h3 {
   font-family: 'Pirata One', 'IM Fell English SC', serif;
   font-weight: 700;
   color: #bfa13a;
   margin-top: 0;
   letter-spacing: 0.04em;
+  font-size: 1.6em;
   text-shadow:
-    2px 2px 0 #3a2c13,
-    0 2px 8px #e0c68a;
+    1px 1px 0 #3a2c13,
+    0 1px 4px #e0c68a;
+}
+
+h4 {
+  font-family: 'IM Fell English SC', 'Pirata One', serif;
+  font-weight: 700;
+  color: #bfa13a;
+  margin-top: 0;
+  letter-spacing: 0.03em;
+  font-size: 1.3em;
+  text-shadow: 1px 1px 0 #3a2c13;
+}
+
+h5 {
+  font-family: 'IM Fell English SC', 'Pirata One', serif;
+  font-weight: 700;
+  color: #bfa13a;
+  margin-top: 0;
+  letter-spacing: 0.02em;
+  font-size: 1.1em;
+  text-shadow: 1px 1px 0 #e0c68a;
+}
+
+h6 {
+  font-family: 'IM Fell English SC', 'Pirata One', serif;
+  font-weight: 700;
+  color: #bfa13a;
+  margin-top: 0;
+  letter-spacing: 0.01em;
+  font-size: 1em;
+  text-shadow: 1px 1px 0 #fffbe6;
 }
 
 a {
